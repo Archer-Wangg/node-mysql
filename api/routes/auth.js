@@ -1,0 +1,13 @@
+import express, { json } from "express";
+import { login, logout, register } from "../controllers/auth.js";
+
+
+const router = express.Router();
+
+router.get('/login', login)
+
+router.post('/register', register)
+router.post('/login', login)
+router.post('/logout', logout)
+
+export default router;
