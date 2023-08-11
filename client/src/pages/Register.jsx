@@ -15,17 +15,16 @@ const Register = () => {
   const handleChange = (e) => {
     setInput((prev) => ({...prev, [e.target.name]: e.target.value}))
   }
-  console.log(input);
 
   const handleClick = async (e) => {
     e.preventDefault();
     try {
      const res = await axios.post('http://localhost:8800/register', input);
-     console.log(res);
+     navigate('/login');
     } catch (err) {
       setErr(err.response.data);
     }
-    navigate('/login');
+    
   }
   return (
     <div className='auth'>
